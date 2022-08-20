@@ -138,6 +138,7 @@
     <Content Include="Content\Images\Index card images\BCImage.jpg" />
     <Content Include="Content\Images\Index card images\EdImage.jpg" />
     <Content Include="Content\Images\Index card images\IDImage.jpg" />
+    <Content Include="Content\Images\Usecases\Class_structure_Diagram.png" />
     <Content Include="Content\Images\Usecases\Subsystem_1.png" />
     <Content Include="Content\Images\Usecases\Subsystem_2.png" />
     <Content Include="Content\Images\Usecases\Subsystem_3.png" />

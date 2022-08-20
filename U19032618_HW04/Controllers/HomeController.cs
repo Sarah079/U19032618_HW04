@@ -41,9 +41,8 @@ namespace U19032618_HW04.Controllers
         [HttpPost]
         public ActionResult BirthCertificate(Birthdata Birthform)
         {
-            //BCertificateList.Add(new Birthdata(ID, FName, LName, Contactcell, ContactEmail, Birthdescription ));
-
             //Add form data to list 
+            BCertificateList.Add(Birthform);
 
             //Viewbag to show notification
             ViewBag.Message = "Form Submitted! A consultant will contact you in 2-3 business days";
@@ -51,12 +50,22 @@ namespace U19032618_HW04.Controllers
 
         }
 
-        public ActionResult Education()
+        public ActionResult Education(Educationdata Educationform)
         {
+            //Add form data to list 
+            EdList.Add(Educationform);
+
+            //Viewbag to show notification
+            ViewBag.Message = "Form Submitted! A consultant will contact you in 2-3 business days";
             return View();
         }
-        public ActionResult IDregistration()
+        public ActionResult IDregistration(IDdata IDfrom)
         {
+            //Add form data to list 
+            IDcardList.Add(IDfrom);
+
+            //Viewbag to show notification
+            ViewBag.Message = "Form Submitted! A consultant will contact you in 2-3 business days";
             return View();
         }
 
