@@ -1,0 +1,105 @@
+﻿@model U19032618_HW04.Models.Birthdata
+
+@{
+    ViewBag.Title = "BirthCertificate";
+}
+
+<h2>Late Birth Certification</h2>
+<h3>For those who don't have or aren't sure if they have certification of their birth</h3>
+<btn>Ask for more help</btn>
+
+<div>
+    <h4 class="center">Do I have a birth certificate?</h4>
+    <p class="center">Steps to check if you have a birth certificate</p>
+    <p>If you were issued a Birth Certificate and have never seen it or you are unsure if your parents had it done when you were younger there are simple steps to find this out</p>
+    <p>
+        •	Full out the application for a replacement birth certificate (Form BI-154). Which can be downloaded here: <a href="~/Content/Resources/Form_BI_154.pdf" download="Form_BI_154">Download Form BI-154</a> <br />
+        •	Provide your biometrics <br /> <br />
+        Once this has been submitted you will be able to find out if you have a Birth Certificate on record or not.
+    </p>
+</div>
+@* applying for late birth *@
+<div>
+    <h4 class="center">I don't have one what now?</h4>
+    <p class="center">Steps to apply for a late birth certificate</p>
+    <p>
+        •	Application for an ID (Form B1-9). Which can be downloaded here: <a href="~/Content/Resources/Form_B1-9.pdf" download="Form B1-9">Download Form B1-9</a>
+        <br />
+        •	Completed Forms DHA-24, DHA-24/A x 2 and DHA-288 for the registration of birth  Which can be downloaded here:
+        <a href="~/Content/Resources/DHA-24_notice_of_birth_22072019.pdf" download="Form B1-9">Download Form DHA-24</a>
+        <a href="~/Content/Resources/DHA-288_Birth_Affidavit.pdf" download="Form DHA-288">Download Form DHA-288</a>
+        <br />
+        •	Supporting documentation like proof of birth, clinic card etc, as well as written reasons why the birth was not registered within 30 days of birth.<br />
+        •	Fingerprints of parents or adoptive parents<br />
+        •	Your biometrics <br />
+        •	Certified copies of parents’ IDs, or asylum permit etc.<br />
+        •	Death certificate of your mother<br />
+        •	Certified copy of ID of next of kin<br />
+        •	You must be a South African citizen or permanent residence permit holder, with a valid South African ID. <br />
+
+    </p>
+    <p>Please note that whether you can provide all of this information or not the department is required to submit your application for reveiw </p>
+</div>
+
+
+@* input razor form here *@
+<div class="col-sm-offset-3 backgroundcolour">
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h3 class="center">Full out the form below for more help</h3>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.FName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Contactcell, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Contactcell, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Contactcell, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ContactEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ContactEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Birthdescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Birthdescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Birthdescription, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+     }
+</div>
+

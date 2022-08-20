@@ -1,0 +1,77 @@
+﻿@model U19032618_HW04.Models.IDdata
+
+@{
+    ViewBag.Title = "IDregistration";
+}
+
+<btn>Ask for more help</btn>
+
+<h2>Applying for an Identity Card</h2>
+
+<h3>steps on how to apply:</h3>
+<p>All forms can be downloaded below</p>
+<div>
+    <h4>First time applicant must submit the following to their nearest Department of Home Affairs office/ South African mission/ consulate abroad :</h4>
+    <p>• Form BI-9, completed in black ink  Which can be downloaded here: <a href="~/Content/Resources/Form_BI_154.pdf" download="Form_BI_154">Download Form BI-154</a></p>  @* add download link *@
+    <p>• A certified copy of your Birth certificate or reference book or a copy of the old Transkei, Bophutatswana, Venda or Ciskei homelands identity or travel documents </p>
+    <p>• Two identical, colour photographs (you can get these at almost every photo shop or at the Home Affairs office itself)</p> 
+</div>
+
+<div class="backgroundcolour col-sm-offset-3">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>IDdata</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.FName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Contactcell, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Contactcell, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Contactcell, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ContactEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ContactEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ContactEmail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IDdescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.IDdescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.IDdescription, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

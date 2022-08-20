@@ -1,0 +1,72 @@
+﻿@model IEnumerable<string>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>For those who got lost outside the system</h2><br />
+
+
+
+<section id="cards">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        @* Card 1 *@
+        <div class="col-sm-3">
+            <div class="card box" style="width: 18rem;">
+                <img class="card-img-top homePageImg" src="~/Content/Images/Index card images/BCImage.jpg" alt="Card image cap" >
+                <div class="card-body">
+                    @* heading *@
+                    <h4 class="card-title">Getting a Birth certificate</h4>
+                    @* info *@
+                    <p class="card-text">Finding out if you were registered with a birth certificate and if not how to obtain one regardless of your age.</p>
+                    <btn class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("BirthCertificate", "Home") + "'");">More information</btn><br />
+                </div>
+            </div>
+        </div>
+        @* Card 2 *@
+        <div class="col-sm-3">
+            <div class="card box" style="width: 18rem;">
+                <img class="card-img-top homePageImg" src="~/Content/Images/Index card images/IDImage.jpg" alt="Card image cap">
+                <div class="card-body">
+                    @* heading *@
+                    <h4 class="card-title">Getting an ID card</h4>
+                    @* info *@
+                    <p class="card-text">Applying for jobs, health care and other essential aspects of life often require an Identification card. Follow here for more information on how to obtain this.</p>
+                    <btn class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("IDregistration", "Home") + "'");">More information</btn><br />
+                </div>
+            </div>
+        </div>
+        @* Card 3 *@
+        <div class="col-sm-3">
+            <div class="card box" style="width: 18rem;">
+                <img class="card-img-top homePageImg" src="~/Content/Images/Index card images/EdImage.jpg" alt="Card image cap">
+                <div class="card-body">
+                    @* heading *@
+                    <h4 class="card-title">Getting an education</h4>
+                    @* info *@
+                    <p class="card-text">Whether it’s going back to school, exploring university options or even completing up to a grade 6 level education can open infinite doors for you and we are here to help.</p>
+                    <btn class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("Education", "Home") + "'");">More information</btn><br />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</section>
+
+<section id="Usecases">
+    <br />
+    <h3>Use cases and Class structure diagram</h3>
+    @foreach (var img in Model)
+    {
+    <div class="row">
+        <div class="col-sm-6 col-lg-offset-2">
+            <img  src="@Url.Content( Convert.ToString(img))"   />
+        </div>
+        <br />
+
+    </div>
+    }
+
+</section>
+
+
