@@ -39,6 +39,10 @@ textarea {
     background-color: lightgray;
 }
 
+.educationimg {
+    height: 200px;
+    width: 300px;
+}
 
 .box {
     height: 100%;

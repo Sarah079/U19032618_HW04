@@ -6,14 +6,14 @@
 
 <h2>Getting an education</h2>
 <h3>No matter what level or type of education you are looking for we are here to help!</h3>
-<btn>Ask for more help</btn>
+<btn>Ask for more help</btn><br />
 <section id="cards">
     <div class="row">
         <div class="col-sm-1"></div>
         @* traditional government ed. *@
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                <img class="card-img-top homePageImg" src="~/Content/Images/Education images/Matriculating.jpg" alt="Card image cap">
                 <div class="card-body">
                     @* heading *@
                     <h5 class="card-title">Traditional government education</h5>
@@ -26,7 +26,7 @@
         @* Card 2 *@
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                <img class="card-img-top homePageImg" src="~/Content/Images/Education images/certification.jpg" alt="Card image cap">
                 <div class="card-body">
                     @* heading *@
                     <h5 class="card-title">Online certificates</h5>
@@ -39,7 +39,7 @@
         @* Card 3 *@
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+                <img class="card-img-top homePageImg" src="~/Content/Images/Education images/short courses.jpg" alt="Card image cap">
                 <div class="card-body">
                     @* heading *@
                     <h5 class="card-title">Other courses</h5>
@@ -51,9 +51,9 @@
         </div>
         <div class="col-sm-1"></div>
     </div>
-</section>
+</section><br />
 
-<div class="backgroundcolour col-sm-offset-3">
+<div class="backgroundcolour col-sm-offset-2">
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
